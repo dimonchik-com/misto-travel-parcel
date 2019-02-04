@@ -5,7 +5,7 @@ const nodemailer = require("nodemailer");
 let bot;
 
 if(process.env.token) {
-    bot = new TelegramBot(process.env.token, {polling: true});
+    bot = new TelegramBot(process.env.telegram_token, {polling: true});
 }
 
 let list_user={};
@@ -25,6 +25,7 @@ if(process.env.token) {
         }
     });
 }
+
 const puppeteer = require('puppeteer');
 
 start();
