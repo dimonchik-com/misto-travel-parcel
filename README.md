@@ -3,7 +3,7 @@
 ## Install
 
 ```
-docker pull dimonchikcom/misto-travel-parser:lates
+docker pull dimonchikcom/misto-travel-parser
 ```
 
 ## Usage

@@ -4,14 +4,14 @@ const nodemailer = require("nodemailer");
 
 let bot;
 
-if(process.env.token) {
+if(process.env.telegram_token) {
     bot = new TelegramBot(process.env.telegram_token, {polling: true});
 }
 
 let list_user={};
 let html_more="";
 
-if(process.env.token) {
+if(process.env.telegram_token) {
     bot.on('message', (msg) => {
         const chatId = msg.chat.id;
         list_user[chatId] = chatId;
@@ -131,7 +131,7 @@ function send_data(bodyHTML) {
 
     if(html_less) {
 
-        if(process.env.token) {
+        if(process.env.telegram_token) {
             for (elem in list_user) {
                 bot.sendMessage(elem, html_less, {parse_mode: "HTML"});
             }
